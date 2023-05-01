@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovely Professional University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/cf9f01e437.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+           font-family: 'Poppins', sans-serif;
+           
+        }
+        .header{
+          min-height: 100vh;
+          width: 100%;
+          background-image: url(https://www.pagalguy.com/wp-content/uploads/2022/05/LPU-18.5.2022-scaled.jpg);  
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+        nav{
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        nav img{
+            width: 50px;
+
+        }
+        .nav-links{
+            flex: 1;
+        text-align: right;
+        
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color:black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #e9dedd;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        .text-box h1{
+             font-size: 62px;
+        }
+        .text-box p{
+            margin: 10px 0 40px;
+            font-size: 14px;
+            color: black;
+            font-weight: 510;
+
+        }
+        .visit-btn{
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            padding: 12px 34px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        .visit-btn:hover{
+            border: 1px solid #282221;
+            background: #d6c2c1;
+            transition: 1s;
+        }
+        
+
+        @media(max-width:700px){
+            .text-box h1{
+                font-size: 20px;
+            }
+            .nav-links ul li{
+                display: block;
+            }
+            .nav-links{
+                position: absolute;
+                background: #f5d383;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: 0;
+                text-align: left;
+                z-index: 2;
+            }
+         
+        }
+        /*---------------course--------------*/
+        .course{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1{
+          font-size: 36px;
+          font-weight: 600;  
+        }
+        p{
+            color: #160404;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+        .row{
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .course-col{
+            flex-basis: 31%;
+            background: #e9dcc9;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+            
+        }
+        h3{
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+
+        }
+        .course-col:hover{
+         box-shadow:0 0 20px 0px rgba(14, 1, 1, 0.2);
+        }
+        @media(max-width:700px){
+            .row{
+                flex-direction: column;
+            }
+        }
+        /*------------Department----------*/
+        .department{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .department-col{
+            justify-content: space-evenly;
+            flex-basis: 32%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .course-col img{
+            width: 100%;
+            display: block;
+
+        }
+        .layer{
+            background: rgba(27, 2, 2, 0.2);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+            
+        }
+        .layer:hover{
+            background: #e2e6e7;
+            
+            
+        }
+        .layer h3{
+            width: 100%;
+            font-weight: 500;
+            color: black;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            transition: 0.5s;
+        }
+        .layer:hover h3{
+            bottom: 49%;
+            opacity: 1;
+        }
+    
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 15px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilities-col img{
+    width: 100%;
+    border-radius: 15px;
+
+}
+.facilities-col p{
+    padding: 0;
+
+}
+.facilities-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+/*-------------ENROLL----------*/
+.enroll{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(https://dev.lpu.in/assets/img/admissions/admission-banner.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    text-align: center;
+    padding: 100px 0;
+}
+.enroll h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+/*------------footer------------*/
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.About{
+    min-height: 70vh;
+          width: 100%;
+          background-image: url(https://bakersfieldlimoservice.com/wp-content/uploads/2018/06/graduation-caps-flying-1.jpg);  
+          background-position: center;
+          background-size: cover;
+          position: relative;
+          color: #fff;
+}
+.About h1{
+    text-align: center;
+    color: #fff;
+}
+.About h2{
+    text-align: center;
+    color: #fff;
+}
+.About p{
+    text-align: center;
+    color: #fff;
+}
+/*------------------Placement---------------*/
+.Placement
+    {
+        text-align: center;
+          min-height: 70vh;
+          width: 100%;
+         background-color: #f5d383;
+          background-position: center;
+          background-size: cover;
+          position: relative;
+          margin-bottom: auto;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="PHN_Internship_Task2_College_HomePage.html"><img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Lovely_Professional_University_logo.png" alt="logo"></a>
+            <div class="nav-links">
+                <!-- <i class="fa-solid fa-xmark"></i> -->
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="#Course">Courses</a></li>
+                    <li><a href="">Department</a></li>
+                    <li><a href="">Faculty</a></li>
+                    <li><a href="">Research</a></li>
+                    <li><a href="">Placement</a></li>
+                    <li><a href="">Contact us</a></li>
+                </ul>
+            </div>
+            <!-- <i class="fa-solid fa-bars"></i> -->
+        </nav>
+
+        <div class="text-box">
+            <h1>India's Biggest University</h1>
+            <h2>Lovely Professional University</h2>
+            <p>UNIVERSITY WITH BEST PLACEMENTS
+                Another Milestone !
+                Record of highest package
+                received by an engineering
+                passout in India.</p>
+            <a href="" class="visit-btn">Visit Us To Know More</a>
+        </div>
+    </section>
+    <!-- ----------------Courses--------- -->
+    <section class="course" id="Course">
+        <h1>Courses we offer</h1>
+        <p>We offers a wide range of undergraduate and postgraduate programs in various fields</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>Bachelor Degree</h3>
+                <p>We offers a wide range of Bachelor's Degree programs in various fields in Computer Science, Mechanical, Civil,Electrical, Admission is ongoing </p>
+            </div>
+            <div class="course-col">
+                <h3>Master Degree</h3>
+                <p>We offers a wide range of Master's Degree programs in various fields in Computer Science, Mechanical, Civil,Electrical, Admission is ongoing </p>
+            </div>
+            <div class="course-col">
+                <h3>PHD</h3>
+                <p>We offers a wide range of PHD Degree programs in various fields in Computer Science, Mechanical, Civil,Electrical, Admission is ongoing </p>
+            </div>
+        </div>
+    </section>
+    
+
+        <!-- ----------------Department--------- -->
+        <section class="department">
+            <h1>Various Department we Have</h1>
+            <p> We offers a wide range of programs in various fields</p>
+            <div class="row">
+                <div class="department-col">
+                    <img src="https://github.com/Raushan2704/Assests/blob/main/em3/CSI_mobile-375x500.jpg?raw=true" alt="">
+                    <div class="layer">
+                        <h3>Computer Science</h3>
+                    </div>
+                    
+                </div>
+                <div class="department-col">
+                    <img src="https://github.com/Raushan2704/Assests/blob/main/em3/mech-dept-banner-2021-1a.jpg?raw=true" alt="">
+                    <div class="layer">
+                        <h3>Mechanical</h3>
+                    </div>
+                   
+                   
+                </div>
+                <div class="department-col">
+                    <img src="https://github.com/Raushan2704/Assests/blob/main/em3/Future-of-Civil-Engineering.jpg?raw=true" alt="">
+                    <div class="layer">
+                        <h3>Civil</h3>
+                    </div>
+                    
+                    
+                </div>
+                <div class="department-col">
+                    <img src="https://github.com/Raushan2704/Assests/blob/main/em3/ee-undergrad-cc-800x800.jpg?raw=true" alt="">
+                    <div class="layer">
+                        <h3>Electrical</h3>
+                    </div>
+               
+                    
+                </div>
+            </div>
+        </section>
+           <!-- ----------------Faculty--------- -->
+           <section class="department">
+            <h1>Best Faculty we Have</h1>
+            <p>WE have Well Educated Experience PHD Holder Professer's </p>
+            <div class="row">
+                <div class="department-col">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0XyWsmaZhu576YBAQH7poj175stzFv1EVpQ&usqp=CAU" alt="">
+                    <div class="layer">
+                        <h3>Computer Science</h3>
+                    </div>
+                    
+                </div>
+                <div class="department-col">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-hLa51xHdL8zkaE8ehVAp0VzjHFuWLlmjkw&usqp=CAU" alt="">
+                    <div class="layer">
+                        <h3>Mechanical</h3>
+                    </div>
+                   
+                   
+                </div>
+                <div class="department-col">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDyP3O0eqnoD5wfHc7LyuiU1Sh2nMSxXTYyw&usqp=CAU" alt="">
+                    <div class="layer">
+                        <h3>Civil</h3>
+                    </div>
+                    
+                    
+                </div>
+                <div class="department-col">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0jO5hkFYBqk9-MyRfM8pec_rWvv8Y0OWbzg&usqp=CAU" alt="">
+                    <div class="layer">
+                        <h3>Electrical</h3>
+                    </div>
+               
+                    
+                </div>
+            </div>
+        </section>
+        <!-- ----------------Facilities--------- -->
+<section class="facilities">
+    <h1>Our facilities</h1>
+    <p>Best facilities Provides To our Students</p>
+    <div class="row">
+        <div class="facilities-col">
+            <img src="https://github.com/Raushan2704/Assests/blob/main/em/main-qimg-723f229f5151adfcda329e0e0bd8fcdf-lq.jpeg?raw=true" alt="">
+            <h3>World Class Library</h3>
+            
+        </div>
+        <div class="facilities-col">
+            <img src="https://github.com/Raushan2704/Assests/blob/main/em/lovely-professional-university-sets-new-benchmark-in-placements-in-india%E2%80%93image-three.jpg?raw=true" alt="">
+            <h3>Best Lab </h3>
+            
+        </div>
+        <div class="facilities-col">
+            <img src="https://github.com/Raushan2704/Assests/blob/main/em/9892194_orig.jpg?raw=true" alt="">
+            <h3>Largest Playground</h3>
+          
+        </div>
+        <div class="facilities-col">
+            <img src="https://github.com/Raushan2704/Assests/blob/main/em/8.jpg?raw=true" alt="">
+            <h3>Testy and Healthy Food</h3>
+            
+        </div>
+    </div>
+</section>
+<!-- Research--------------------------- -->
+
+   
+   <section class="department">
+    <h1>Research In Various Technology</h1>
+    <p>LPU facilitates research pursuits of our faculty members, scholars and students at scale and it is the impact.</p>
+    <div class="row">
+        <div class="department-col">
+            <img src="https://github.com/Raushan2704/Assests/blob/main/em2/nvidia-applied-research-accelerator-program-2c50-p.jpg?raw=true" alt="">
+            <div class="layer">
+                <h3>Robotics</h3>
+            </div>
+            
+        </div>
+        <div class="department-col">
+            <img src="https://github.com/Raushan2704/Assests/blob/main/em2/IoT-in-Manufacturing_Banner.jpg?raw=true" alt="">
+            <div class="layer">
+                <h3>IOT</h3>
+            </div>
+           
+           
+        </div>
+        <div class="department-col">
+            <img src="https://github.com/Raushan2704/Assests/blob/main/em2/A7408-Importance-of-Research-in-Architecture-Image-2.jpg?raw=true" alt="">
+            <div class="layer">
+                <h3>Architect</h3>
+            </div>
+            
+            
+        </div>
+
+    </div>
+</section>
+<section class="Placement">
+    <h1>Placement</h1>
+    <h1>1000's</h1>
+    <p>of Alumni working in MNCs across the US, UK, Canada and Australia- taking LPUs footprints over the globe.</p>
+    <h1>2000+</h1>
+    <p>Recruiters including Google, Amazon, Microsoft, Lutron, HP, Bosch and many more have hired LPU students.</p>
+    <h1>5000+</h1>
+    <p>Offers alone made by Fortune 500 companies including Microsoft, Facebook, Amazon, IBM, Cognizant, HP, Colgate Palmolive, Verizon, S&P Global & more.</p>
+    <h1>350+</h1>
+    <p>Companies who recruit from best BTech colleges like IITs, NITs and IIMs also recruit from LPU.</p>
+</section>
+
+
+<!-- About us -->
+<section class="About">
+    <h1>About Us</h1>
+    <h2>Lovely Professional University</h2>
+    <p>Lovely Professional University is ranked 23rd amongst Top Universities in India. <br>Impeccable Placement Record. AICTE Approved. Modern Infrastructure.  LPU Placements. Merit Scholarship. Global Exposure. Best Pvt. University.</p>
+</section>
+
+<!-- footer -->
+    <section class="footer">
+        <h4>Contact Us</h4>
+        <!--   enroll -->
+<section class="enroll">
+    <h1>Enroll For Our Various Courses Anywhere From World</h1>
+    <a href="" class="visit-btn">CONTACT US</a>
+</section>
+<div class="container">
+    <form>
+        
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="mobile" placeholder="Mobile" required>
+        <h4>Enter Your Query Here...</h4>
+        <textarea required></textarea>
+        <input type="submit" value="Submit" id="button">
+    </form>
+</div>
+        <p>India's Best Private University* Lovely Professional University, Jalandhar-Delhi, G.T. Road, Phagwara, Punjab (INDIA) -144411.
+    </p>
+        <div class="icons">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+        <p>Made by<i class="fa fa-heart-o"></i>Raushan Kumar raushankumar2704@gmail.com</p>
+    </section>
+
+</body>
+</html>
